@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title> Calculator </title>
+        <meta charset="UTF-08">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="Stylesheet" href="project1.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <form name="mainform">
+                        <input type="text" id="display" disabled>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="input(1);">1</button></td>
+                <td><button onclick="input(2);">2</button></td>
+                <td><button onclick="input(3);">3</button></td>
+                <td><button onclick="input('+');">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input(4);">4</button></td>
+                <td><button onclick="input(5);">5</button></td>
+                <td><button onclick="input(6);">6</button></td>
+                <td><button onclick="input('-');">-</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input(7);">7</button></td>
+                <td><button onclick="input(8);">8</button></td>
+                <td><button onclick="input(9);">9</button></td>
+                <td><button onclick="input('*');">x</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="input(0);">0</button></td>
+                <td><button onclick="input('.');">.</button></td>
+                <td><button onclick="input('/');">/</button></td>
+                <td><button onclick="equal();">=</button></td>
+            </tr>
+            <tr><td></td></tr>
+            <tr>
+                <td colspan=4><input type="reset" onclick="reset()" value="C"></td>
+            </tr>
+            
+        </table>
+    </body>
+    <script>
+        var text="";
+        function input(num){
+            text=text+num;
+            document.mainform.display.value=text;
+        }   
+
+        function equal(){
+            var answer=eval(text);
+            document.mainform.display.value=answer;
+        }
+        
+        function reset(){
+            text="";
+            document.mainform.display.value=text;
+        }
+</script>
+</html>
